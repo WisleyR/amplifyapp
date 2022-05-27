@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import "@aws-amplify/ui-react/styles.css";
 import{
-  withAuthenticator,
+  Authenticator,
   Button,
   Heading,
   Image,
@@ -12,14 +12,18 @@ import{
 } from "@aws-amplify/ui-react";
 
 
-function App({signOut}) {
+export default function App() {
   return (
+    <Authenticator socialProviders={['amazon', 'apple', 'facebook', 'google']}>
+      {({ signOut, user }) => (
     <View className="App">
       <Card>
         <Image src={logo} className="App-logo" alt="logo" />
         <Heading>Hello There</Heading>
         <Button onClick={signOut}>Sign out</Button>
       </Card>
+ 
+
 
     
 
@@ -28,7 +32,9 @@ function App({signOut}) {
 
 
     </View>
+      )}
+    </Authenticator> 
   );
 }
 
-export default withAuthenticator(App);
+
