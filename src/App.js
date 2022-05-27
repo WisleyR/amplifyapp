@@ -12,6 +12,7 @@ import{
 } from "@aws-amplify/ui-react";
 
 
+
 export default function App() {
   return (
     <Authenticator socialProviders={['amazon', 'apple', 'facebook', 'google']}>
