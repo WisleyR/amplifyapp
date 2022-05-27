@@ -10,16 +10,17 @@ import{
   Card
 
 } from "@aws-amplify/ui-react";
-// testing
+
 
 function App({signOut}) {
   return (
     <View className="App">
       <Card>
         <Image src={logo} className="App-logo" alt="logo" />
-        <Heading level={1}>We now have Auth</Heading>
+        <Heading>Hello There</Heading>
+        <Button onClick={signOut}>Sign out</Button>
       </Card>
-      <Button onClick={signOut}>Sing Out</Button>
+
     
 
 
